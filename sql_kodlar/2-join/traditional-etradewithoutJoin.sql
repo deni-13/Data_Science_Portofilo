@@ -1,0 +1,34 @@
+select * from USERS
+
+where ID=1
+
+select * from ADDRESS  -- user id ye adress bilgilerini alabilirim
+where USERID =1
+
+-- tablo birlestirme
+
+--geleneksel yontem
+select U.USERNAME_,U.NAMESURNAME
+FROM USERS U ,ADDRESS A  -- ALINCAK TABLOLAR
+WHERE U.ID=A.USERID
+
+AND U.ID=1
+
+select U.USERNAME_,U.NAMESURNAME,A.POSTALCODE,A.ADDRESSTEXT,
+A.POSTALCODE,C.COUNTRY ,CT.CITY,T.TOWN,D.DISTRICT 
+
+FROM USERS U ,ADDRESS A ,COUNTRIES C ,
+CITIES CT,TOWNS T,
+DISTRICTS D
+
+-- ALINCAK TABLOLAR
+
+WHERE U.ID=A.USERID AND A.COUNTRYID=C.ID AND CT.ID=A.CITYID 
+AND T.ID=A.TOWNID
+AND D.ID=A.DISTRICTID
+
+AND U.ID=4 -- 2 tane adresi var
+
+select * from COUNTRIES
+-- cok kullanmýyor bu!
+

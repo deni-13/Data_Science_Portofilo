@@ -1,0 +1,4 @@
+-- aggregate 
+
+select * from customers
+
